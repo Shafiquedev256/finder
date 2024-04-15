@@ -25,7 +25,7 @@ To run the Finders website locally, follow these steps:
 2. Navigate to the project directory: `cd finders`
 3. Install dependencies: `npm install`
 4. Start the development server: `npm run dev`
-5. Open your web browser and visit `http://localhost:3000` to view the website.
+5. Open your web browser and visit `http://localhost:5173` to view the website.
 
 ## Contributing
 
@@ -39,7 +39,7 @@ Contributions to Finders are welcome! If you'd like to contribute, please follow
 
 ## Feedback
 
-If you have any feedback, suggestions, or encounter any issues while using Finders, please don't hesitate to [open an issue](https://github.com/your-username/finders/issues) on GitHub. Your input is valuable and helps us improve the website for everyone.
+If you have any feedback, suggestions, or encounter any issues while using Finders, please don't hesitate to [open an issue](https://github.com/Shafiquedev256/finderissues) on GitHub. Your input is valuable and helps us improve the website for everyone.
 
 ## License
 
