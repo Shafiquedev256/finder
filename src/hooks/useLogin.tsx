@@ -38,7 +38,7 @@ export const useLogin = () => {
   };
 
   const logout = () => {
-    dispatch("LOGOUT");
+    dispatch({ type: "LOGOUT" });
     localStorage.removeItem("__user");
   };
   return { login, logout, errorMessage, isLoading, userInfo };

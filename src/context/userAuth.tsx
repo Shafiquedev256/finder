@@ -40,6 +40,7 @@ export const Authprovider = ({ children }: Children) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   useEffect(() => {
     const getUser = localStorage.getItem("__user");
+
     if (getUser) {
       let user = JSON.parse(getUser);
       dispatch({ type: "LOGIN", payload: user });
