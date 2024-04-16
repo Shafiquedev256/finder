@@ -4,7 +4,7 @@ import { useAuth } from "../context/userAuth";
 import { useState } from "react";
 
 export const NavBar = () => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const { state } = useAuth();
   const { logout } = useLogin();
   return (
