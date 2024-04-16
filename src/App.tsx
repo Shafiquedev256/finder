@@ -18,14 +18,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/signup' element={<Signup_page />} />
         <Route path='/login' element={<Signin_page />} />
-        <Route
-          path='/chartroom'
-          element={
-            <Protected>
-              <Chat_room socket={socket} />
-            </Protected>
-          }
-        />
+        <Route path='/chartroom' element={<Chat_room socket={socket} />} />
       </Routes>
     </BrowserRouter>
   );

@@ -10,8 +10,9 @@ export const NavBar = () => {
       <Link to={"/"} className='font-medium text-2xl '>
         Finders
       </Link>
-      <div className='flex flex-row justify-between w-1/5 font-medium'>
-        <Link to={"/chartroom"}>Community</Link>
+      <div className='font-medium  md:hidden'>Menu</div>
+      <div className='md:flex md:flex-row md:justify-between md:w-1/5 md:font-medium hidden '>
+        <Link to={"/chartroom"}>Chats</Link>
         <Link to={"/"}>Donate</Link>
         {state.user && (
           <div
