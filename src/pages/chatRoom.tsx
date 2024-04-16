@@ -46,8 +46,8 @@ const Chat_room = ({ socket }: Props) => {
 
   return (
     <>
-      <div className='flex flex-col h-[100%] min-h-screen max-w-screen bg-gray-900 overflow-hidden text-white'>
-        <div className='flex-1 p-4 w-screen'>
+      <div className='flex flex-col h-[100%] min-h-screen w-screen bg-gray-900   text-white'>
+        <div className='flex-1 p-4 w-[100%]'>
           {messages.map((message) => (
             <div
               key={message.date + message.user}
@@ -67,11 +67,11 @@ const Chat_room = ({ socket }: Props) => {
               </div>
             </div>
           ))}
-          <div className='w-screen p-20'>
+          <div className=' p-20'>
             {/*this div create that extra space at the end of the conversation */}
           </div>
         </div>
-        <div className='flex space-x-3  items-center w-screen p-4 bg-gray-800 fixed bottom-0 left-0'>
+        <div className='flex flex-row space-x-2  items-center w-[100%] md:p4 p-2 bg-gray-800 fixed bottom-0 left-0'>
           <input
             type='text'
             placeholder='Type your message...'
@@ -95,7 +95,7 @@ const Chat_room = ({ socket }: Props) => {
           </div>
 
           <button
-            className='px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:bg-blue-600'
+            className='md:px-3 md:py-2  p-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:bg-blue-600'
             onClick={handleMessageSend}
           >
             Send
