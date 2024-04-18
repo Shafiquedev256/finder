@@ -55,7 +55,7 @@ const MissingPersonForm: React.FC = () => {
       if (res) {
         alert("Report submitted successfully!");
         console.log();
-        navigate("/");
+        navigate("/listings");
       } else {
         alert("Error submitting report");
       }
