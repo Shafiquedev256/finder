@@ -20,8 +20,22 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/signup' element={<Signup_page />} />
         <Route path='/login' element={<Signin_page />} />
-        <Route path='/listings' element={<ListingPage />} />
-        <Route path='/add' element={<MissingPersonForm />} />
+        <Route
+          path='/listings'
+          element={
+            <Protected>
+              <ListingPage />
+            </Protected>
+          }
+        />
+        <Route
+          path='/add'
+          element={
+            <Protected>
+              <MissingPersonForm />
+            </Protected>
+          }
+        />
 
         <Route
           path='/chartroom'

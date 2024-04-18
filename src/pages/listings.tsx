@@ -2,6 +2,18 @@ import { ImagePost } from "../components/imagepost";
 import { NavBar } from "../components/navBar";
 import useFetchPosts from "../hooks/usePosts";
 
+export type Post = {
+  fullName: string;
+  age: string;
+  gender: string;
+  lastSeenLocation: string;
+  dateLastSeen: string;
+  description: string;
+  contactName: string;
+  contactNumber: string;
+  url: string;
+  _id: string;
+};
 const ListingPage = () => {
   const { posts, loading } = useFetchPosts(
     `${import.meta.env.VITE_HEADER}user/api/missing`
@@ -13,13 +25,16 @@ const ListingPage = () => {
   return (
     <div>
       <NavBar />
-      <ul>
-        {posts.map((post: { fullName: string; _id: string; url: string }) => (
+      <div className='font-bold text-center text-3xl md:text-5xl '>
+        List of missing people .
+      </div>
+      <div className='md:grid md:grid-cols-3'>
+        {posts.map((post: Post) => (
           <div className='container mx-auto p-4' key={post._id}>
-            <ImagePost username={post.fullName} imageUrl={post.url} />
+            <ImagePost post={post} />
           </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
