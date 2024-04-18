@@ -24,7 +24,7 @@ export const NavBar = () => {
             Chats
           </Link>
           <Link
-            to={"/"}
+            to={"/listings"}
             className='p-1 font-medium hover:bg-gray-100 rounded-md m-1 border-gray-500 text-gray-600'
           >
             List
@@ -48,7 +48,7 @@ export const NavBar = () => {
       )}
       <div className='md:flex md:flex-row md:justify-evenly md:w-1/5 md:font-medium hidden '>
         <Link to={"/chartroom"}>Chats</Link>
-        <Link to={"/"}>List</Link>
+        <Link to={"/listings"}>List</Link>
         {!state.user ? (
           <Link
             to={"/login"}
