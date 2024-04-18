@@ -5,6 +5,8 @@ import Signin_page from "./pages/signIn";
 import Chat_room from "./pages/chatRoom";
 import { io } from "socket.io-client";
 import { Protected } from "./protected/protect";
+import ListingPage from "./pages/listings";
+import MissingPersonForm from "./pages/addMissing";
 
 const socket = io(import.meta.env.VITE_HEADER, {
   transports: ["websocket"],
@@ -18,6 +20,9 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/signup' element={<Signup_page />} />
         <Route path='/login' element={<Signin_page />} />
+        <Route path='/listings' element={<ListingPage />} />
+        <Route path='/add' element={<MissingPersonForm />} />
+
         <Route
           path='/chartroom'
           element={

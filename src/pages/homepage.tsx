@@ -20,7 +20,7 @@ const Home = () => {
           <div className='flex flex-row  justify-center items-center'>
             {state.user && (
               <Link
-                to={"/"}
+                to={"/add"}
                 className='flex flex-row  justify-center items-center mb-6 bg-green-700 w-fit text-white font-medium text-center rounded-md p-2'
               >
                 <img src={addSvg} alt='Missing Person' />
