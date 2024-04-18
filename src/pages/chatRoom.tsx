@@ -16,8 +16,9 @@ const Chat_room = ({ socket }: Props) => {
   const [open, setOpen] = useState(false);
   const [newMessage, setNewMessage] = useState("");
   const [messages, setMessages] = useState<Message[]>([{} as Message]);
-  socket.connect();
+
   useEffect(() => {
+    socket.connect();
     socket.on("message", (msg: Message) => {
       setMessages((state) => [...state, msg]);
     });
