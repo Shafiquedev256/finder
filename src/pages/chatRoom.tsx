@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import iconeEl from "../assets/attach-svgrepo-com.svg";
 
 type Message = {
@@ -12,7 +12,7 @@ type Props = { socket: any };
 
 const Chat_room = ({ socket }: Props) => {
   const [user, setUser] = useState("");
-
+  const messageEl = useRef<HTMLDivElement | null>(null);
   const [open, setOpen] = useState(false);
   const [newMessage, setNewMessage] = useState("");
   const [messages, setMessages] = useState<Message[]>([{} as Message]);
@@ -33,6 +33,25 @@ const Chat_room = ({ socket }: Props) => {
       setUser(userEl.userName);
     }
   }, []);
+
+  useEffect(() => {
+    socket.connect();
+    socket.emit("oldMessages", { room: "community" });
+    socket.on("oldmessages", (msg: any) => {
+      const old = msg.old;
+      setMessages((state) => [...old, ...state]);
+    });
+    return () => {
+      socket.off("oldmessages");
+    };
+  }, []);
+
+  useEffect(() => {
+    if (messageEl.current) {
+      messageEl.current.scrollIntoView();
+    }
+  }, [messages]);
+
   const handleMessageSend = () => {
     if (newMessage) {
       socket.emit("sendMessage", {
@@ -68,7 +87,7 @@ const Chat_room = ({ socket }: Props) => {
               </div>
             </div>
           ))}
-          <div className=' p-20'>
+          <div className=' p-10' ref={messageEl}>
             {/*this div create that extra space at the end of the conversation */}
           </div>
         </div>
